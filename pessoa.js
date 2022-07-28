@@ -3,11 +3,12 @@ import { Perfil } from "./perfil.js";
     
 export default class Pessoa extends Perfil {
     
-    constructor(nome, idade, cpf, idAAtivo, eAssinante) {
+    constructor(nome, idade, cpf, telefone, idAAtivo, eAssinante) {
         super(idAAtivo, eAssinante);  
 
         this.nome = nome;
         this.idade = idade;
+        this.telefone = telefone;
         this.cpf = cpf;
         
     }
@@ -17,26 +18,25 @@ export default class Pessoa extends Perfil {
       nome:  this.nome,
       idade:  this.idade,
       cpf:  this.cpf,
+      telefone: this.telefone,
       idAAtivo:  this.idAAtivo, 
       eAssinante:  this.eAssinante 
     })
 
     }
 
-    imprimirPessoa(pessoa) {
+    montarObjPessoa() {
         const obj = this.criarPessoa();
-
-    return JSON.stringify(
-        
-        `Nome:  ${obj.nome} 
-        Idade:  ${obj.idade} 
-        Status:  ${obj.idAAtivo} 
-        Assinante: ${obj.eAssinante} `
-
-    ) 
-
+        return JSON.stringify(obj)
     }
+
+    imprimirPessoa() {
+        const imprimeObj = this.montarObjPessoa();
+
+        return (String(imprimeObj));
+    }
+
+
 }
 
-
-export { Pessoa };
+export { Pessoa }

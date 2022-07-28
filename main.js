@@ -1,23 +1,32 @@
 import { Pessoa } from './pessoa.js';
-import { Perfil } from './perfil.js';
+
 
 
 
 const user = new Pessoa();
 
-user.nome = 'jonathan'
-user.idade = 15;
-user.cpf = 12345678912
+user.nome = 'Jonathan'
+user.idade = 25;
+user.cpf = 12345678912;
+user.telefone = '47 9922-4736'
 user.idAAtivo = true;
-user.eAssinante = 'S';
+user.eAssinante = 'Sim';
 
-
-console.log(user);
+document.getElementById('nome').innerHTML = `Nome:   ${user.nome}`;
+document.getElementById('idade').innerHTML = `Idade: ${user.idade}`;
+document.getElementById('telefone').innerHTML = `Telefone: ${user.telefone}`;
+document.getElementById('eAssinante').innerHTML = `Assinante: ${user.eAssinante}`;
 
 console.log(user.criarPessoa());
 
+console.log(user.montarObjPessoa());
+
 console.log(user.imprimirPessoa());
 
+let viewPessoa = user.imprimirPessoa();
 
-document.getElementById('teste').innerHTML = user.imprimirPessoa();
+let arrayPessoas = [];
+
+arrayPessoas.push(viewPessoa);
+
 
