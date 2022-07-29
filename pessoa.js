@@ -14,6 +14,7 @@ export default class Pessoa extends Perfil {
     }
 
     criarPessoa() {
+
     return({
       nome:  this.nome,
       idade:  this.idade,
@@ -34,6 +35,20 @@ export default class Pessoa extends Perfil {
         const imprimeObj = this.montarObjPessoa();
 
         return (String(imprimeObj));
+    }
+
+    imprimirPessoaNaTela() {
+
+    const user = new Pessoa();
+    
+    window.location.href = "http://127.0.0.1:5500/index.html";
+
+
+    document.getElementById('nome').innerHTML = `Nome:   ${user.nome}`;
+    document.getElementById('idade').innerHTML = `Idade: ${user.idade}`;
+    document.getElementById('telefone').innerHTML = `Telefone: ${user.telefone}`;
+    document.getElementById('eAssinante').innerHTML = `Assinante: ${user.eAssinante}`;
+
     }
 
 
