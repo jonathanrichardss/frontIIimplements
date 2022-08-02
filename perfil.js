@@ -1,4 +1,4 @@
-export default class Perfil {
+class Perfil {
     
     constructor(idAAtivo, eAssinante) {
         this.idAAtivo = idAAtivo;
@@ -8,4 +8,4 @@ export default class Perfil {
 
 }
 
-export { Perfil };
+export default Perfil;
