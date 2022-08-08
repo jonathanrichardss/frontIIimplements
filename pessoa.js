@@ -16,12 +16,12 @@ class Pessoa extends Perfil {
     criarPessoa() {
 
     return({
-      nome:  this.nome,
-      idade:  this.idade,
+      nomeUser:  this.nome,
+      idadeUser:  this.idade,
       cpf:  this.cpf,
-      telefone: this.telefone,
+      telefoneUser: this.telefone,
       idAAtivo:  this.idAAtivo, 
-      eAssinante:  this.eAssinante 
+      eAssinanteUser:  this.eAssinante 
     })
 
     }
@@ -32,38 +32,19 @@ class Pessoa extends Perfil {
     }
 
     imprimirPessoa() {
-        const imprimeObj = this.montarObjPessoa();
 
-        return (String(imprimeObj));
+        document.getElementById('nome').innerHTML = `Nome: ${localStorage.getItem('user')}`;
+        document.getElementById('idade').innerHTML = `Idade: ${localStorage.getItem('idade')}`;
+        document.getElementById('telefone').innerHTML = `Telefone: ${localStorage.getItem('telefone')}`;
+        document.getElementById('eAssinante').innerHTML = `Assinatura: ${localStorage.getItem('eAssinante')}`;
+
     }
 
     imprimirPessoaNaTela() {
 
-    const user = new Pessoa();
-
-    // user.nome = document.getElementById('nome-input').value;
-    // user.telefone = document.getElementById('idade-input').value;
-    // user.telefone = document.getElementById('telefone-input').value;
-    // user.eAssinante = document.getElementById('eAssinante-input').value;
+    this.imprimirPessoa();
     
 
-    
-    window.location.href = "http://127.0.0.1:5500/index.html";
-
-    var li = document.createElement('li');
-    var text = document.createTextNode('teste');
-    li.appendChild(text);
-
-    document.getElementById('nome').appendChild(li);
-
-        
-    // document.getElementById('nome').innerHTML = `Nome:   ${user.nome}`;
-    // document.getElementById('idade').innerHTML = `Idade: ${user.idade}`;
-    // document.getElementById('telefone').innerHTML = `Telefone: ${user.telefone}`;
-    // document.getElementById('eAssinante').innerHTML = `Assinante: ${user.eAssinante}`;
-
-    
- 
 
     }
 
