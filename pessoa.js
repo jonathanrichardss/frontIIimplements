@@ -13,8 +13,8 @@ class Pessoa extends Perfil {
         
     }
 
-    criarPessoa() {
-
+    criarPessoa() { 
+    
     return({
       nomeUser:  this.nome,
       idadeUser:  this.idade,
@@ -33,21 +33,53 @@ class Pessoa extends Perfil {
 
     imprimirPessoa() {
 
-        document.getElementById('nome').innerHTML = `Nome: ${localStorage.getItem('nome')}`;
-        document.getElementById('idade').innerHTML = `Idade: ${localStorage.getItem('idade')}`;
-        document.getElementById('telefone').innerHTML = `Telefone: ${localStorage.getItem('telefone')}`;
-        document.getElementById('eAssinante').innerHTML = `Assinatura: ${localStorage.getItem('eAssinante')}`;
+        const validaObj = this.criarObjetoProperties();
+
+        this.minhaFunction();
+
+        if(validaObj != null) {
+           
+            document.getElementById('nome').innerHTML = `Nome: ${validaObj.nome}`;
+            document.getElementById('idade').innerHTML = `Idade: ${validaObj.idade}`;
+            document.getElementById('telefone').innerHTML = `Telefone: ${validaObj.telefone}`;
+            document.getElementById('eAssinante').innerHTML = `Assinatura: ${validaObj.eAssinante}`;
+
+        }
+
+        
 
     }
 
     imprimirPessoaNaTela() {
-
-    this.imprimirPessoa();
     
-
+    this.imprimirPessoa();
 
     }
 
+    minhaFunction() {
+        const recentImg = localStorage.getItem("recent-image");
+    
+        if (recentImg != null) {
+            console.log('teste');
+            document.getElementById('img-id').setAttribute('src', recentImg);
+        }
+    }
+
+    criarObjetoProperties() {
+
+        const nome = localStorage.getItem('nome');
+        const idade = localStorage.getItem('idade');
+        const telefone = localStorage.getItem('telefone');
+        const eAssinante = localStorage.getItem('eAssinante');
+        
+        return {
+           nome,
+           idade,
+           telefone,
+           eAssinante
+        }
+
+    }
 
 }
 
