@@ -33,7 +33,7 @@ class Pessoa extends Perfil {
 
     imprimirPessoa() {
 
-        document.getElementById('nome').innerHTML = `Nome: ${localStorage.getItem('user')}`;
+        document.getElementById('nome').innerHTML = `Nome: ${localStorage.getItem('nome')}`;
         document.getElementById('idade').innerHTML = `Idade: ${localStorage.getItem('idade')}`;
         document.getElementById('telefone').innerHTML = `Telefone: ${localStorage.getItem('telefone')}`;
         document.getElementById('eAssinante').innerHTML = `Assinatura: ${localStorage.getItem('eAssinante')}`;

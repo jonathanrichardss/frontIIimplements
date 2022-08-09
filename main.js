@@ -25,7 +25,8 @@ window.onload = function imprimirPessoa() {
 }
 
 
-document.getElementById("#img-id").addEventListener("change", function() {
+
+document.getElementById('formFile').addEventListener('change', function() {
     
     const reader = new FileReader();
 
@@ -33,7 +34,17 @@ document.getElementById("#img-id").addEventListener("change", function() {
                 localStorage.setItem("recent-image", reader.result)
     })
 
-    const newImage = reader.readAsDataURL(this.files[0]);
+    reader.readAsDataURL(this.files[0]);
 
    
+ })
+
+ document.addEventListener("DOMContentLoaded", () => {
+    
+    const recentImg = localStorage.getItem("recent-image");
+
+    if (recentImg) {
+        document.getElementById('img-id').setAttribute('src', recentImg);
+    }
+    
  })
