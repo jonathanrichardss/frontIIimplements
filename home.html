@@ -15,12 +15,12 @@
 </header>
 <main class="main-section">
     <section class="cards-section" >
-        <form class="card-maker-input" id="cardmk">
+        <form action="/index.html" method="POST" class="card-maker-input" id="cardmk">
             <div class="card-img">
                 <img class="logo-img" id="logoId" src="./images/user.png" alt="imagem do usuario">
                 
                 <label for="formFile" class="form-label">Envie aqui uma foto</label>
-                <input class="form-control" type="file" id="formFile">
+                <input class="form-control" type="file" id="formFile"/>
             </div>
             <br>
             <br>
@@ -28,7 +28,7 @@
             <input type="date" class="card-title-input" id="idade-input" name="idade-input"></input>
             <input type="tel" class="card-title-input" id="telefone-input" name="telefone-input"></input>
             <input class="card-title-input" id="eAssinante-input" name="eAssinante-input"></input>
-            <a href="./index.html"><button onclick="criarPessoa()" type="submit" class="btn btn-outline-secondary" id="mainbtn">CRIAR</button></a>
+            <button onclick="criarPessoa()" type="submit" class="btn btn-outline-secondary" id="mainbtn">CRIAR</button>
         </form>
     </section>
 </main>

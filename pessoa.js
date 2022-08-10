@@ -14,55 +14,36 @@ class Pessoa extends Perfil {
     }
 
     criarPessoa() { 
-    
-    return({
-      nomeUser:  this.nome,
-      idadeUser:  this.idade,
-      cpf:  this.cpf,
-      telefoneUser: this.telefone,
-      idAAtivo:  this.idAAtivo, 
-      eAssinanteUser:  this.eAssinante 
-    })
 
-    }
+        const pessoa = new Pessoa();
 
-    montarObjPessoa() {
-        const obj = this.criarPessoa();
-        return JSON.stringify(obj)
+        pessoa.minhaFunction();
+
+        window.location.href = 'index.html';
+
     }
 
     imprimirPessoa() {
 
         const validaObj = this.criarObjetoProperties();
+        console.log(validaObj)
 
-        this.minhaFunction();
-
-        if(validaObj != null) {
-           
+        if(validaObj !== null) {
             document.getElementById('nome').innerHTML = `Nome: ${validaObj.nome}`;
             document.getElementById('idade').innerHTML = `Idade: ${validaObj.idade}`;
             document.getElementById('telefone').innerHTML = `Telefone: ${validaObj.telefone}`;
             document.getElementById('eAssinante').innerHTML = `Assinatura: ${validaObj.eAssinante}`;
 
-        }
-
+        } 
         
-
-    }
-
-    imprimirPessoaNaTela() {
-    
-    this.imprimirPessoa();
 
     }
 
     minhaFunction() {
         const recentImg = localStorage.getItem("recent-image");
-    
-        if (recentImg != null) {
-            console.log('teste');
+        if (recentImg) {
             document.getElementById('img-id').setAttribute('src', recentImg);
-        }
+        } 
     }
 
     criarObjetoProperties() {
@@ -72,12 +53,12 @@ class Pessoa extends Perfil {
         const telefone = localStorage.getItem('telefone');
         const eAssinante = localStorage.getItem('eAssinante');
         
-        return {
+        return ({
            nome,
            idade,
            telefone,
            eAssinante
-        }
+        })
 
     }
 

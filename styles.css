@@ -51,7 +51,7 @@ body {
     padding: 50px 20px 50px 20px;
     margin: 20px;
     min-height: 200px;
-    max-width: fit-content;
+    min-width: 200px;
     align-items: stretch;
     justify-content: center;
     box-shadow: 5px 10px 8px rgb(49, 46, 46);
@@ -139,7 +139,15 @@ body {
     color: #888888
 }
 
+.img-user {
+    width: 200px;
+    padding: 4px;
+    margin-bottom: 0px;
+}
+
 .logo-img {
+   
+   display: flex;
    width: 100px;
    padding: 5px;
    margin-bottom: 5px;
