@@ -19,16 +19,15 @@ class Pessoa extends Perfil {
 
         pessoa.minhaFunction();
 
-        window.location.href = 'index.html';
-
     }
 
     imprimirPessoa() {
 
-        const validaObj = this.criarObjetoProperties();
-        console.log(validaObj)
+        let validaObj = this.criarObjetoProperties();
+       
 
-        if(validaObj !== null) {
+        if(validaObj != null) {
+            console.log(validaObj)
             document.getElementById('nome').innerHTML = `Nome: ${validaObj.nome}`;
             document.getElementById('idade').innerHTML = `Idade: ${validaObj.idade}`;
             document.getElementById('telefone').innerHTML = `Telefone: ${validaObj.telefone}`;
@@ -41,7 +40,10 @@ class Pessoa extends Perfil {
 
     minhaFunction() {
         const recentImg = localStorage.getItem("recent-image");
-        if (recentImg) {
+        console.log(recentImg);
+        if (recentImg != null) {
+            console.log('teste');
+            console.log(document.getElementById('img-id'));
             document.getElementById('img-id').setAttribute('src', recentImg);
         } 
     }

@@ -18,18 +18,26 @@ window.criarPessoa = function criarPessoa() {
     localStorage.setItem('telefone', pessoa.telefone);
     localStorage.setItem('eAssinante', pessoa.eAssinante);
 
+    window.location.href = 'index.html';
+
     pessoa.criarPessoa(); 
-    pessoa.minhaFunction();
+    //pessoa.minhaFunction();
+    //const user = new Pessoa();
+    //window.location.href = './index.html';
+ 
+
+   
     
 }
 
 //Grava uma imagem no local storage através do DOM, pelo seletor ID
 
-const form = document.getElementById('formFile');
+const input = document.getElementById('input');
 
-if (form) {
 
-    form.addEventListener('change', function () {
+if (input) {
+
+    input.addEventListener('change', function () {
 
         const reader = new FileReader();
         console.log(reader);
@@ -39,26 +47,20 @@ if (form) {
     
         reader.readAsDataURL(this.files[0]);
     
-    
+       
     });
+        
+   
+     
+}
 
+const pessoa = new Pessoa();
 
-    window.onsubmit = ('submit', function(e) {
-        
-        e.preventDefault();
-        const user = new Pessoa();
-
-        
-        user.imprimirPessoa();
-        
-        
-            
-    }); 
+if (pessoa != null) {
+    pessoa.imprimirPessoa();
+    pessoa.minhaFunction();
 }
 
 
 
-
-
-
-  
+    
