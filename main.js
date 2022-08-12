@@ -1,4 +1,4 @@
-import Pessoa from './pessoa.js'; //Aqui importamos a classe Pessoa para o main do projeto
+import Pessoa from './pessoa.js'; //Aqui importamos a classe Pessoa para o módulo main do projeto
 
 
 //Através do objeto window chamo a função criarPessoa() e invoco os métodos que interessam nesse contexto
@@ -18,24 +18,19 @@ window.criarPessoa = function criarPessoa() {
     localStorage.setItem('telefone', pessoa.telefone);
     localStorage.setItem('eAssinante', pessoa.eAssinante);
 
-    window.location.href = 'index.html';
-
     pessoa.criarPessoa(); 
-    //pessoa.minhaFunction();
-    //const user = new Pessoa();
-    //window.location.href = './index.html';
- 
+  
+    
 
    
     
 }
 
 //Grava uma imagem no local storage através do DOM, pelo seletor ID
-
 const input = document.getElementById('input');
 
 
-if (input) {
+if (input != null) {
 
     input.addEventListener('change', function () {
 
@@ -54,8 +49,10 @@ if (input) {
      
 }
 
+//Instancia um novo objeto do tipo Pessoa.
 const pessoa = new Pessoa();
 
+//Validamos se esse objeto é nulo ou não.
 if (pessoa != null) {
     pessoa.imprimirPessoa();
     pessoa.minhaFunction();
@@ -63,4 +60,6 @@ if (pessoa != null) {
 
 
 
-    
+ window.ondurationchange = () => {
+    alert('Oi');
+ }

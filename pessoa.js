@@ -1,6 +1,7 @@
-import Perfil from './perfil.js';
+import Perfil from './perfil.js'; //Aqui importamos a classe Perfil para o módulo Pessoa 
 
-    
+
+//Definindo a classe Pessoa com seus atributos, funções e também o construtor.
 class Pessoa extends Perfil {
     
     constructor(nome, idade, cpf, telefone, idAAtivo, eAssinante) {
@@ -18,7 +19,8 @@ class Pessoa extends Perfil {
         const pessoa = new Pessoa();
 
         pessoa.minhaFunction();
-
+        
+        
     }
 
     imprimirPessoa() {
@@ -45,7 +47,9 @@ class Pessoa extends Perfil {
             console.log('teste');
             console.log(document.getElementById('img-id'));
             document.getElementById('img-id').setAttribute('src', recentImg);
-        } 
+        }
+        
+        
     }
 
     criarObjetoProperties() {
@@ -66,4 +70,4 @@ class Pessoa extends Perfil {
 
 }
 
-export default Pessoa;
+export default Pessoa; //Exportando a classe Pessoa de forma padrão.
