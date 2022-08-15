@@ -12,16 +12,13 @@ window.criarPessoa = function criarPessoa() {
     pessoa.telefone = document.querySelector('#telefone-input').value;
     pessoa.eAssinante = document.querySelector('#eAssinante-input').value;
 
-    
+
     localStorage.setItem('nome', pessoa.nome);
-    localStorage.setItem('idade', pessoa.idade);
+    localStorage.setItem('idade', pessoa.converteData(pessoa.idade));
     localStorage.setItem('telefone', pessoa.telefone);
     localStorage.setItem('eAssinante', pessoa.eAssinante);
 
     pessoa.criarPessoa(); 
-  
-    
-
    
     
 }
@@ -58,8 +55,28 @@ if (pessoa != null) {
     pessoa.minhaFunction();
 }
 
+//Trocamos a cor de fundo da segunda página para uma animação.
+ function mudaBg() {
+    
+    const images = [
 
+        'url("./images/1.jpg")',
+        'url("./images/2.jpg")',
+        'url("./images/3.jpg")',
+        'url("./images/4.jpg")',
+        'url("./images/5.jpg")',
+        'url("./images/6.jpg")',
+        'url("./images/7.jpg")'
+    ]
 
- window.ondurationchange = () => {
-    alert('Oi');
+    const body = document.getElementById('body-container');
+    const bg = images[Math.floor(Math.random() * images.length)];
+
+    body.style.backgroundImage = bg;
+    body.style.transition = '0.3s';
+   
  }
+
+//Definindo com base no que vai ser a mudança e o TimeOut para ocorrer o evento.
+setInterval(mudaBg, 2000);
+

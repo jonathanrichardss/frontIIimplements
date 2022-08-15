@@ -9,7 +9,7 @@
 
     <title>Perfil Usuário</title>
 </head>
-<body>
+<body id="body-container">
 <header class="hdr-section">
     <h1 class="main-title">Crie aqui o seu card.</h1>
 </header>
@@ -20,7 +20,7 @@
                 <img class="logo-img" id="logoId" src="./images/user.png" alt="imagem do usuario">
                 
                 <label for="formFile" class="form-label">Envie aqui uma foto</label>
-                <input class="form-control" type="file" id="input"/>
+                <input class="form-control" type="file" accept="image/*" id="input"/>
             </div>
             <br>
             <br>
@@ -31,12 +31,15 @@
                      name="nome-input"
                      title="Digite um nome."
                      placeholder="Digite aqui o seu nome"
+                     required
+                     title="Informe um nome."
                      >       
             </input>
             <input type="date" 
                     class="card-title-input" 
                     id="idade-input" 
                     name="idade-input"
+                    required
                    >
             </input>
             <input type="tel"
@@ -46,6 +49,7 @@
                    maxlength="11"
                    title="Digite um telefone."
                    placeholder="Digite aqui o seu telefone"
+                   required
                    >
             </input>
             <input type="text" 
@@ -54,9 +58,11 @@
                    name="eAssinante-input"
                    title="Digite uma cidade."
                    placeholder="Cidade, UF"
+                   required
                    >
             </input>
             <button onclick="criarPessoa()" type="submit" class="btn btn-outline-secondary" id="mainbtn">CRIAR</button>
+            <button onclick="window.localStorage.clear()" type="reset" class="btn btn-outline-secondary" id="mainbtn2">LIMPAR</button>
         </form>
     </section>
 </main>

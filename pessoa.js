@@ -26,14 +26,13 @@ class Pessoa extends Perfil {
     imprimirPessoa() {
 
         let validaObj = this.criarObjetoProperties();
-       
 
         if(validaObj != null) {
             console.log(validaObj)
             document.getElementById('nome').innerHTML = `Nome: ${validaObj.nome}`;
-            document.getElementById('idade').innerHTML = `Idade: ${validaObj.idade}`;
+            document.getElementById('idade').innerHTML = `Idade: ${validaObj.idade} anos`;
             document.getElementById('telefone').innerHTML = `Telefone: ${validaObj.telefone}`;
-            document.getElementById('eAssinante').innerHTML = `Assinatura: ${validaObj.eAssinante}`;
+            document.getElementById('eAssinante').innerHTML = `Cidade: ${validaObj.eAssinante}`;
 
         } 
         
@@ -42,7 +41,7 @@ class Pessoa extends Perfil {
 
     minhaFunction() {
         const recentImg = localStorage.getItem("recent-image");
-        console.log(recentImg);
+     
         if (recentImg != null) {
             console.log('teste');
             console.log(document.getElementById('img-id'));
@@ -55,7 +54,7 @@ class Pessoa extends Perfil {
     criarObjetoProperties() {
 
         const nome = localStorage.getItem('nome');
-        const idade = localStorage.getItem('idade');
+        let idade = localStorage.getItem('idade');
         const telefone = localStorage.getItem('telefone');
         const eAssinante = localStorage.getItem('eAssinante');
         
@@ -66,6 +65,15 @@ class Pessoa extends Perfil {
            eAssinante
         })
 
+    }
+
+    converteData(idade) {
+        
+        let dataA = new Date(idade);
+        let dataB = new Date();
+        const diff = (dataB.getFullYear() - dataA.getFullYear());
+
+        return diff;
     }
 
 }
