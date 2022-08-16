@@ -74,9 +74,10 @@ if (pessoa != null) {
 
     body.style.backgroundImage = bg;
     body.style.transition = '0.3s';
+    body.style.transitionDelay = '0.3'
    
  }
 
 //Definindo com base no que vai ser a mudança e o TimeOut para ocorrer o evento.
-setInterval(mudaBg, 2000);
+setInterval(mudaBg, 2500);
 
